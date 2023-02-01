@@ -1,6 +1,5 @@
 import static org.junit.Assert.*;
 import org.junit.*;
-import java.util.ArrayList;
 
 public class ArrayTests {
 	@Test 
@@ -20,5 +19,14 @@ public class ArrayTests {
     assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
     int[] input2 = {1, 2, 3, 4, 5};
     assertArrayEquals(new int[]{5, 4, 3, 2, 1}, ArrayExamples.reversed(input2));
+  }
+
+  // test any array with more than 2 elements, test array with 2 lowest elements
+  @Test
+  public void testAverage() {
+    double[] input1 = new double[]{1.0, 2.0, 3.0, 4.0};
+    assertEquals(3.0, ArrayExamples.averageWithoutLowest(input1), 0.0001);
+    double[] input2 = new double[]{1.0, 1.0, 2.0, 3.0};
+    assertEquals(2.0, ArrayExamples.averageWithoutLowest(input2), 0.0001);
   }
 }
